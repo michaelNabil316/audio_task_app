@@ -1,4 +1,3 @@
-import 'package:cet_e_services/shared/widgets/app_header_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cet_e_services/core/utils/app_images.dart';
@@ -22,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppHeaderBackground(iconPath: AppImages.like),
+            //   AppHeaderBackground(iconPath: AppImages.like),
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),

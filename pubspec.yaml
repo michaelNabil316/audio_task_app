@@ -14,7 +14,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  easy_localization: ^3.0.1
+  #easy_localization: ^3.0.1
   cupertino_icons: ^1.0.2
   hexcolor: ^3.0.1
   flutter_screenutil: ^5.8.4
@@ -33,6 +33,7 @@ dependencies:
   path_provider: ^2.0.15
   flutter_cache_manager: ^3.3.1
   audioplayers: ^4.1.0
+  get: ^4.6.5
 
 
 dev_dependencies:
@@ -55,7 +56,6 @@ flutter:
   assets:
     - assets/images/
     - assets/fonts/
-    - l10n/
 
   fonts:
     - family: Almarai-Bold

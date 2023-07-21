@@ -1,7 +1,6 @@
 import 'package:cet_e_services/View/home/home_screen.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../more/more_screen.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -41,11 +40,11 @@ class _TabsScreenState extends State<TabsScreen> with TickerProviderStateMixin {
         unselectedLabelColor: Colors.grey,
         tabs: <Widget>[
           Tab(
-            text: 'Home',
+            text: 'Home'.tr,
             icon: Icon(Icons.home),
           ),
           Tab(
-            text: 'more',
+            text: 'more'.tr,
             icon: Icon(Icons.more),
           ),
         ],
