@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:cet_e_services/core/utils/app_colors.dart';
-import 'package:cet_e_services/core/utils/app_strings.dart';
+import 'package:task/core/utils/app_colors.dart';
+import 'package:task/core/utils/app_strings.dart';
 import 'package:get/get.dart' as getx;
 
 changeThemeMode(bool isDark) {

@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:cet_e_services/config/routes/app_routes.dart';
-import 'package:cet_e_services/core/utils/app_images.dart';
+import 'package:task/config/routes/app_routes.dart';
+import 'package:task/core/utils/app_images.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

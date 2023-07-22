@@ -1,17 +1,18 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cet_e_services/core/usecases/usecase.dart';
-import 'package:cet_e_services/core/utils/app_strings.dart';
-import 'package:cet_e_services/features/splash/domain/usecases/change_locale.dart';
-import 'package:cet_e_services/features/splash/domain/usecases/get_saved_locale.dart';
+import 'package:task/core/usecases/usecase.dart';
+import 'package:task/core/utils/app_strings.dart';
+import 'package:task/features/splash/domain/usecases/change_locale.dart';
+import 'package:task/features/splash/domain/usecases/get_saved_locale.dart';
 
 part 'locale_state.dart';
 
 class SplashCubit extends Cubit<LocaleState> {
   final GetSavedLocaleUseCase getSavedLocaleUseCase;
   final ChangeLocaleUseCase changeLocaleUseCase;
-  SplashCubit({required this.getSavedLocaleUseCase, required this.changeLocaleUseCase})
+  SplashCubit(
+      {required this.getSavedLocaleUseCase, required this.changeLocaleUseCase})
       : super(const LocaleInitial(Locale(AppStrings.englishCode)));
   String currentLangCode = AppStrings.englishCode;
   Future<void> getLocale() async {

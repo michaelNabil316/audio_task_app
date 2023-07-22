@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:cet_e_services/core/utils/app_images.dart';
+import 'package:task/core/utils/app_images.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

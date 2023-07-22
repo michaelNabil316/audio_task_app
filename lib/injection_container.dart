@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:cet_e_services/core/api/api_consumer.dart';
-import 'package:cet_e_services/core/api/app_intercepters.dart';
-import 'package:cet_e_services/core/api/dio_consumer.dart';
-import 'package:cet_e_services/core/network/network_info.dart';
+import 'package:task/core/api/api_consumer.dart';
+import 'package:task/core/api/app_intercepters.dart';
+import 'package:task/core/api/dio_consumer.dart';
+import 'package:task/core/network/network_info.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;

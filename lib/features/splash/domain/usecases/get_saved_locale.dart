@@ -1,7 +1,7 @@
-import 'package:cet_e_services/core/errors/failures.dart';
+import 'package:task/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:cet_e_services/core/usecases/usecase.dart';
-import 'package:cet_e_services/features/splash/domain/repositories/lang_repository.dart';
+import 'package:task/core/usecases/usecase.dart';
+import 'package:task/features/splash/domain/repositories/lang_repository.dart';
 
 class GetSavedLocaleUseCase implements UseCase<String, NoParams> {
   final LangRepository langRepository;

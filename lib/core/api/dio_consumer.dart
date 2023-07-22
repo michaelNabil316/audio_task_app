@@ -4,19 +4,21 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:cet_e_services/core/api/api_consumer.dart';
-import 'package:cet_e_services/core/api/app_intercepters.dart';
-import 'package:cet_e_services/core/api/end_points.dart';
-import 'package:cet_e_services/core/api/status_code.dart';
-import 'package:cet_e_services/core/errors/exceptions.dart';
-import 'package:cet_e_services/injection_container.dart' as di;
+import 'package:task/core/api/api_consumer.dart';
+import 'package:task/core/api/app_intercepters.dart';
+import 'package:task/core/api/end_points.dart';
+import 'package:task/core/api/status_code.dart';
+import 'package:task/core/errors/exceptions.dart';
+import 'package:task/injection_container.dart' as di;
 
 class DioConsumer implements ApiConsumer {
   final Dio client;
 
   DioConsumer({required this.client}) {
-    (client.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (HttpClient client) {
-      client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+    (client.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
       return client;
     };
     client.options
@@ -47,7 +49,9 @@ class DioConsumer implements ApiConsumer {
 
   @override
   Future post(String path,
-      {Map<String, dynamic>? body, Map<String, dynamic>? queryParameters, bool formDataIsEnabled = false}) async {
+      {Map<String, dynamic>? body,
+      Map<String, dynamic>? queryParameters,
+      bool formDataIsEnabled = false}) async {
     try {
       final response = await client.post(
         path,
@@ -61,9 +65,12 @@ class DioConsumer implements ApiConsumer {
   }
 
   @override
-  Future put(String path, {Map<String, dynamic>? body, Map<String, dynamic>? queryParameters}) async {
+  Future put(String path,
+      {Map<String, dynamic>? body,
+      Map<String, dynamic>? queryParameters}) async {
     try {
-      final response = await client.put(path, queryParameters: queryParameters, data: body);
+      final response =
+          await client.put(path, queryParameters: queryParameters, data: body);
       return jsonDecode(response.data.toString());
     } on DioError catch (err) {
       _handleDioError(err);

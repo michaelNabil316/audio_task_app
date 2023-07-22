@@ -1,6 +1,7 @@
-import 'package:cet_e_services/View/home/home_screen.dart';
+import 'package:task/View/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../core/translation/controller.dart';
 import '../more/more_screen.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -21,34 +22,38 @@ class _TabsScreenState extends State<TabsScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("task app"),
-      ),
-      body: TabBarView(
-        controller: tabController,
-        children: [
-          HomeScreen(),
-          MoreScreen(),
-        ],
-      ),
-      bottomNavigationBar: TabBar(
-        controller: tabController,
-        dividerColor: Colors.blue,
-        indicatorColor: Colors.blue,
-        labelColor: Colors.blue,
-        unselectedLabelColor: Colors.grey,
-        tabs: <Widget>[
-          Tab(
-            text: 'Home'.tr,
-            icon: Icon(Icons.home),
-          ),
-          Tab(
-            text: 'more'.tr,
-            icon: Icon(Icons.more),
-          ),
-        ],
-      ),
-    );
+    return GetBuilder(
+        init: AppLanguage(),
+        builder: (AppLanguage controller) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text("task app"),
+            ),
+            body: TabBarView(
+              controller: tabController,
+              children: [
+                HomeScreen(),
+                MoreScreen(),
+              ],
+            ),
+            bottomNavigationBar: TabBar(
+              controller: tabController,
+              dividerColor: Colors.blue,
+              indicatorColor: Colors.blue,
+              labelColor: Colors.blue,
+              unselectedLabelColor: Colors.grey,
+              tabs: <Widget>[
+                Tab(
+                  text: 'Home'.tr,
+                  icon: Icon(Icons.home),
+                ),
+                Tab(
+                  text: 'more'.tr,
+                  icon: Icon(Icons.more),
+                ),
+              ],
+            ),
+          );
+        });
   }
 }

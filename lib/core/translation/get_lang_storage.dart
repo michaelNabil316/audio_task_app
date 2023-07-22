@@ -6,6 +6,6 @@ class LocalStorage {
   }
 
   Future<String> get languageSelected async {
-    return preferences.getString("language") ?? 'ar';
+    return preferences.getString("language") ?? 'en';
   }
 }

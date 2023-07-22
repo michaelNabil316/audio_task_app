@@ -1,4 +1,4 @@
-import 'package:cet_e_services/core/utils/app_strings.dart';
+import 'package:task/core/utils/app_strings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LangLocalDataSource {
@@ -17,6 +17,7 @@ class LangLocalDataSourceImpl implements LangLocalDataSource {
 
   @override
   Future<String?> getCurrentLocale() async {
-    return sharedPreferences.getString(AppStrings.locale) ?? AppStrings.englishCode;
+    return sharedPreferences.getString(AppStrings.locale) ??
+        AppStrings.englishCode;
   }
 }

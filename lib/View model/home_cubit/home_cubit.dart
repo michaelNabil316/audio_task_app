@@ -1,5 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../Model/audio_player_model.dart';
+import '../../core/api/end_points.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -10,6 +12,18 @@ class HomeCubit extends Cubit<HomeState> {
   List<AudioModel> availableAudios = [];
   bool isLoading = false;
   bool isErrorBorder = false;
+  Future<List<AudioModel>> getAllAudio() async {
+    List<AudioModel> audios = [];
+    try {
+      var response = await Dio().get(EndPoints.audioUrl);
+      var list = response.data as List;
+      audios = list.map((audio) => AudioModel.fromJson(audio)).toList();
+    } catch (exception) {
+      print(exception);
+    }
+    print(audios);
+    return audios;
+  }
 
   getAllGovernments() async {
     changeLodingState(true);
